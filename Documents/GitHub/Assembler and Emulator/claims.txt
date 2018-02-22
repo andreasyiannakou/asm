@@ -1,0 +1,61 @@
+; Name: Andreas Yiannakou, Student Number: 1347357  Username: ay13695
+; Declaration of authorship: This file was written entirely by me. 
+; Filename: claims.txt
+
+I believe that I have implemented everything the mark scheme has asked from me apart from some of the bullet points under the general marks which are subjective issues rather than whether things have been implemented. 
+
+ASSEMBLER: My assembler is a one read assembler, it detects a number of errors and warnings discussed further below, it correctly deals with labels and also has a table of instructions with expected operands. The assembler has been tested extensively with 74 test files, and has assembled valid programs and detected errant programs correctly for these cases. I have implemented the SET instruction, and I have demonstrated it in numerous assembler files, as well as the two files in the 2 SET Programs folder.
+
+Output files:
+  .o: The assembler correctly produces the object code into a file, which can then be used by the emulator. Note: Not produced if there are errors in the .asm file.
+  
+.lst: I believe that I have produced a advanced listing file as it prints not only, the address and the object code, it also prints the labels, instructions, operands and comments. Note: Not produced if there are errors in the .asm file.
+
+.log: My assembler prints the errors and warnings as it finds them, therefore they are sometimes not in address order, however it finds all the errors and warnings in the program, rather breaking at the first error.
+
+
+EMULATOR: I believe I have implemented everything that the mark scheme asks for, the emulator reads in the .o file and produces an initial memory dump, it then runs the program if it executes correctly then only the registers are printed to the terminal and then a final log file is created; otherwise an error message is printed to the terminal and the final log file is not created. There can also be an undetected infinite loop which will constantly print the registers into the terminal until the user manually exits the program. I believe I have shown sufficient evidence of the emulator both executing test programs and detecting errant programs.
+
+initial log: This prints out the initial values of the registers and also what is stored in memory after the .o file has been read and stored.
+
+final log: This prints out the final values of the registers and also what is stored in memory after the program has been executed. Note: Not produced if an errant emulator program.
+
+
+BUBBLE SORT: My bubble sort has been tested with the data provided in the file that outlined the bubble sort provided on the course page but also with smaller data and also data applied using the SET instruction, it works for all three of the cases on both the emulator provided on the course webpage and the emulator I created myself.
+
+I have also written a couple of other complex assembly language programs, a multiplier (which can handle both positive and negative numbers) and a calendar calculator (which tells you which day of the week you were born and was about 3 times longer than my bubble.asm file). These files were written to show my understanding of the assembly language, and to try and push the boundaries of what the emulator can do. 
+
+
+Errors & Warnings: I believe I have implemented correctly are listed below, the assembler error and warning checks are in the 12 Individual Error Checks & 10 Individual Warning Checks folders which can be found in the 26 Error and Warning Programs folder. Whilst the emulator checks can all be found in the 11 Errant Emulator Programs folder.
+Errors the assembler detects:
+1)  Wrong file extension, must .asm.
+2)  Multiple labels detected on a single line.
+3)  Multiple operands detected.
+4)  Label not alphanumeric.
+5)  Label starts with a number not a letter.
+6)  Instruction does not expect an operand.
+7)  Instruction expects and operand.
+8)  Duplicate label.
+9)  Instruction is not valid.
+10) SET instruction must be on same line as label.
+11) Operand neither a number nor a label.
+
+Warnings the assembler detects:
+1)  Space at the beginning of a line containing a label.
+2)  Unused label.
+3)  No gap between instruction and comment.
+4)  No gap between operand and comment.
+5)  Instruction not all in small caps.
+6)  Instruction not all in capitals.
+7)  No gap between label and instruction.
+8)  Label on same line as the  label is defined.
+9)  Infinite loop created.
+10) Possibility of an infinite loop.
+
+Errors the emulator detects:
+1) Infinite loop.
+2) Program Counter outside of valid region.
+3) Unrecognised opcode, trying to apply data instruction.
+4) Program Counter higher than the amount of code entered.
+5) Trying to access memory outside of valid region.
+
